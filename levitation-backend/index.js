@@ -2,17 +2,17 @@ const env = require("dotenv");
 env.config();
 const express = require("express");
 const mongoose = require("mongoose");
-const authRoutes = require("./routes/authRoutes");
-const cors = require("cors");
+// const authRoutes = require("./routes/authRoutes");
+// const cors = require("cors");
 const jwt = require("jsonwebtoken");
 
 // const createUserModel = require("./models/createUser");
 
 const app = express();
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 
-mongoose.connect(process.env.MONGODB_COMPASS);
+mongoose.connect(process.env.MONGODB_URI);
 const User = require("./models/User");
 
 // async function createUser() {
